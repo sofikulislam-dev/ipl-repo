@@ -64,13 +64,13 @@
                             <!-- Action Column -->
                             <td>
                                 <a
-                                    href="<c:url value='/bangalore/edit/${player.id}'/>"
+                                    href="<c:url value='/mumbai/edit/${player.id}'/>"
                                     class="btn btn-sm btn-outline-warning">
                                     Edit
                                 </a>
 
                                 <a
-                                    href="<c:url value='/bangalore/delete?id=${player.id}'/>"
+                                    href="<c:url value='/mumbai/delete?id=${player.id}'/>"
                                     class="btn btn-sm btn-outline-danger"
                                     onclick="return confirm('Are you sure you want to delete this player?');">
                                     Delete
@@ -91,7 +91,7 @@
     <div class="row mt-4">
         <div class="col text-center">
             <a
-                href="<c:url value='/bangalore/list'/>"
+                href="<c:url value='/mumbai/list'/>"
                 class="btn btn-secondary">
                 Back to List
             </a>

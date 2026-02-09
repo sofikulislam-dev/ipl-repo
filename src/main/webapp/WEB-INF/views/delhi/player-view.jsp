@@ -3,83 +3,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Player Details</title>
+    <meta charset="UTF-8">
+    <title>Player Profile</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-          rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        rel="stylesheet">
 </head>
 
 <body class="bg-light">
 
 <div class="container mt-5">
 
-    <!-- Page Header -->
-    <div class="text-center mb-4">
-        <h2 class="fw-bold">Player Details</h2>
-    </div>
+    <!-- Page Title (ONLY place where name appears) -->
+    <h2 class="fw-bold text-center mb-4">
+        <c:out value="${player.name}"/> Profile
+    </h2>
 
-    <div class="card shadow-sm">
-        <div class="card-body p-0">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
 
-            <table class="table table-striped table-hover mb-0 text-center">
-                <thead class="table-info">
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Age</th>
-                    <th>Role</th>
-                    <th>Matches</th>
-                    <th>Runs</th>
-                    <th>Strike Rate</th>
-                    <th>Price</th>
-                    <th>Nationality</th>
-                    <th>Action</th>
-                </tr>
-                </thead>
+            <div class="card shadow-lg border-0">
+                <!-- Generic header, no name -->
+                <div class="card-header bg-info text-white text-center fw-bold">
+                    Player Details
+                </div>
 
-                <tbody>
-                <tr>
-                    <td class="fw-bold">
-                        <c:out value="${player.id}"/>
-                    </td>
-                    <td><c:out value="${player.name}"/></td>
-                    <td><c:out value="${player.age}"/></td>
-                    <td><c:out value="${player.role}"/></td>
-                    <td><c:out value="${player.matches}"/></td>
-                    <td><c:out value="${player.runs}"/></td>
-                    <td><c:out value="${player.strike}"/></td>
-                    <td><c:out value="${player.price}"/></td>
-                    <td><c:out value="${player.nationality}"/></td>
+                <div class="card-body p-4">
 
-
-                    <td>
-                        <div class="d-flex justify-content-center gap-2">
-                            <a href="<c:url value='/delhi/edit?id=${player.id}'/>"
-                               class="btn btn-sm btn-outline-warning">
-                                Edit
-                            </a>
-
-                            <a href="<c:url value='/delhi/delete?id=${player.id}'/>"
-                               class="btn btn-sm btn-outline-danger"
-                               onclick="return confirm('Are you sure you want to delete this player?');">
-                                Delete
-                            </a>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <p><strong>ID:</strong> <c:out value="${player.id}"/></p>
+                            <p><strong>Age:</strong> <c:out value="${player.age}"/></p>
+                            <p><strong>Role:</strong> <c:out value="${player.role}"/></p>
+                            <p><strong>Nationality:</strong> <c:out value="${player.nationality}"/></p>
                         </div>
-                    </td>
-                </tr>
-                </tbody>
 
-            </table>
+                        <div class="col-md-6">
+                            <p><strong>Matches:</strong> <c:out value="${player.matches}"/></p>
+                            <p><strong>Runs:</strong> <c:out value="${player.runs}"/></p>
+                            <p><strong>Strike Rate:</strong> <c:out value="${player.strike}"/></p>
+                            <p><strong>Price:</strong> ₹ <c:out value="${player.price}"/></p>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="d-flex justify-content-center gap-3 mt-4">
+
+                        <a href="<c:url value='/delhi/edit?id=${player.id}'/>"
+                           class="btn btn-warning fw-bold">
+                            Edit Player
+                        </a>
+
+                        <a href="<c:url value='/delhi/delete?id=${player.id}'/>"
+                           class="btn btn-danger fw-bold"
+                           onclick="return confirm('Are you sure you want to delete this player?');">
+                            Delete Player
+                        </a>
+
+                        <a href="<c:url value='/delhi/list'/>"
+                           class="btn btn-secondary fw-bold">
+                            Back to List
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
 
         </div>
-    </div>
-
-    <!-- Footer Actions -->
-    <div class="text-center mt-4">
-        <a href="<c:url value='/delhi/list'/>"
-           class="btn btn-info fw-bold">
-            Back to List
-        </a>
     </div>
 
 </div>

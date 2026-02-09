@@ -58,7 +58,8 @@
 <div class="container">
     <h1 class="page-title">🏏 Welcome to IPL Teams</h1>
 
-    <div class="row g-4">
+
+    <div class="row g-4 justify-content-center">
 
         <div class="col-md-4 col-sm-6">
             <div class="team-card">
@@ -76,20 +77,6 @@
 
         <div class="col-md-4 col-sm-6">
             <div class="team-card">
-                <h5 class="team-name">Mumbai Indians</h5>
-                <a href="mumbai/list" class="btn btn-primary btn-team">View Team</a>
-            </div>
-        </div>
-
-        <div class="col-md-4 col-sm-6">
-            <div class="team-card">
-                <h5 class="team-name">Kolkata Knight Riders</h5>
-                <a href="kolkata/list" class="btn btn-dark btn-team">View Team</a>
-            </div>
-        </div>
-
-        <div class="col-md-4 col-sm-6">
-            <div class="team-card">
                 <h5 class="team-name">Delhi Capitals</h5>
                 <a href="delhi/list" class="btn btn-info btn-team">View Team</a>
             </div>
@@ -97,8 +84,8 @@
 
         <div class="col-md-4 col-sm-6">
             <div class="team-card">
-                <h5 class="team-name">Rajasthan Royals</h5>
-                <a href="rajasthan/list" class="btn btn-secondary btn-team">View Team</a>
+                <h5 class="team-name">Gujarat Titans</h5>
+                <a href="gujarat/list" class="btn btn-success btn-team">View Team</a>
             </div>
         </div>
 
@@ -111,8 +98,8 @@
 
         <div class="col-md-4 col-sm-6">
             <div class="team-card">
-                <h5 class="team-name">Punjab Kings</h5>
-                <a href="punjab/list" class="btn btn-danger btn-team">View Team</a>
+                <h5 class="team-name">Kolkata Knight Riders</h5>
+                <a href="kolkata/list" class="btn btn-dark btn-team">View Team</a>
             </div>
         </div>
 
@@ -123,10 +110,25 @@
             </div>
         </div>
 
-        <div class="col-md-4 col-sm-6 mx-auto">
+        <div class="col-md-4 col-sm-6">
             <div class="team-card">
-                <h5 class="team-name">Gujarat Titans</h5>
-                <a href="gujarat/list" class="btn btn-success btn-team">View Team</a>
+                <h5 class="team-name">Mumbai Indians</h5>
+                <a href="mumbai/list" class="btn btn-primary btn-team">View Team</a>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+            <div class="team-card">
+                <h5 class="team-name">Punjab Kings</h5>
+                <a href="punjab/list" class="btn btn-danger btn-team">View Team</a>
+            </div>
+        </div>
+
+        <!-- THIS WILL NOW AUTO-CENTER -->
+        <div class="col-md-4 col-sm-6">
+            <div class="team-card">
+                <h5 class="team-name">Rajasthan Royals</h5>
+                <a href="rajasthan/list" class="btn btn-secondary btn-team">View Team</a>
             </div>
         </div>
 

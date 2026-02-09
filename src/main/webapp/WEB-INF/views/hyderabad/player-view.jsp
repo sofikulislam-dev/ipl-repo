@@ -3,7 +3,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Player Details</title>
+    <meta charset="UTF-8">
+    <title>Player Profile</title>
 
     <!-- Bootstrap CSS -->
     <link
@@ -13,88 +14,64 @@
 
 <body class="bg-light">
 
-<div class="container py-5">
+<div class="container mt-5">
 
-    <!-- Page Header -->
-    <div class="row mb-4">
-        <div class="col text-center">
-            <h2 class="fw-bold">Player Details</h2>
-        </div>
-    </div>
+    <!-- Page Title (ONLY place where name appears) -->
+    <h2 class="fw-bold text-center mb-4">
+        <c:out value="${player.name}"/> Profile
+    </h2>
 
-    <!-- Details Table -->
     <div class="row justify-content-center">
-        <div class="col-lg-10">
+        <div class="col-md-8">
 
-            <div class="card shadow-sm">
-                <div class="card-body p-0">
+            <div class="card shadow-lg border-0">
+                <!-- Generic header, no name -->
+                <div class="card-header bg-info text-white text-center fw-bold">
+                    Player Details
+                </div>
 
-                    <table class="table table-bordered table-hover mb-0">
-                        <thead class="table-info text-center">
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Player</th>
-                            <th scope="col">Age</th>
-                            <th scope="col">Role</th>
-                            <th scope="col">Matches</th>
-                            <th scope="col">Runs</th>
-                            <th scope="col">Strike Rate</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Nationality</th>
-                            <th scope="col">Action</th>
-                        </tr>
-                        </thead>
+                <div class="card-body p-4">
 
-                        <tbody class="text-center">
-                        <tr>
-                            <td class="fw-semibold">
-                                <c:out value="${player.id}"/>
-                            </td>
-                            <td class="fw-semibold">
-                                <c:out value="${player.name}"/>
-                            </td>
-                            <td><c:out value="${player.age}"/></td>
-                            <td><c:out value="${player.role}"/></td>
-                            <td><c:out value="${player.matches}"/></td>
-                            <td><c:out value="${player.runs}"/></td>
-                            <td><c:out value="${player.strike}"/></td>
-                            <td><c:out value="${player.price}"/></td>
-                            <td><c:out value="${player.nationality}"/></td>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <p><strong>ID:</strong> <c:out value="${player.id}"/></p>
+                            <p><strong>Age:</strong> <c:out value="${player.age}"/></p>
+                            <p><strong>Role:</strong> <c:out value="${player.role}"/></p>
+                            <p><strong>Nationality:</strong> <c:out value="${player.nationality}"/></p>
+                        </div>
 
-                            <!-- Action Column -->
-                            <td>
-                                <a
-                                    href="<c:url value='/bangalore/edit/${player.id}'/>"
-                                    class="btn btn-sm btn-outline-warning">
-                                    Edit
-                                </a>
+                        <div class="col-md-6">
+                            <p><strong>Matches:</strong> <c:out value="${player.matches}"/></p>
+                            <p><strong>Runs:</strong> <c:out value="${player.runs}"/></p>
+                            <p><strong>Strike Rate:</strong> <c:out value="${player.strike}"/></p>
+                            <p><strong>Price:</strong> ₹ <c:out value="${player.price}"/></p>
+                        </div>
+                    </div>
 
-                                <a
-                                    href="<c:url value='/bangalore/delete?id=${player.id}'/>"
-                                    class="btn btn-sm btn-outline-danger"
-                                    onclick="return confirm('Are you sure you want to delete this player?');">
-                                    Delete
-                                </a>
-                            </td>
-                        </tr>
-                        </tbody>
+                    <!-- Action Buttons -->
+                    <div class="d-flex justify-content-center gap-3 mt-4">
 
-                    </table>
+                        <a href="<c:url value='/hyderabad/edit?id=${player.id}'/>"
+                           class="btn btn-warning fw-bold">
+                            Edit Player
+                        </a>
+
+                        <a href="<c:url value='/hyderabad/delete?id=${player.id}'/>"
+                           class="btn btn-danger fw-bold"
+                           onclick="return confirm('Are you sure you want to delete this player?');">
+                            Delete Player
+                        </a>
+
+                        <a href="<c:url value='/hyderabad/list'/>"
+                           class="btn btn-secondary fw-bold">
+                            Back to List
+                        </a>
+
+                    </div>
 
                 </div>
             </div>
 
-        </div>
-    </div>
-
-    <!-- Footer Actions -->
-    <div class="row mt-4">
-        <div class="col text-center">
-            <a
-                href="<c:url value='/bangalore/list'/>"
-                class="btn btn-secondary">
-                Back to List
-            </a>
         </div>
     </div>
 

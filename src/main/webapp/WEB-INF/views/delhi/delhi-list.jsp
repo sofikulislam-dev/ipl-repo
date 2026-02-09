@@ -1,8 +1,9 @@
-<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="jakarta.tags.core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>Delhi Capitals</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -13,18 +14,13 @@
 
 <div class="container mt-5">
 
+    <h2 class="fw-bold text-center mb-4">
+        Delhi Capitals
+    </h2>
+
     <c:choose>
 
-        <c:when test="${player != null && not empty player}">
-
-            <div class="d-flex justify-content-between align-items-center mb-4">
-                <h2 class="fw-bold mb-0">Delhi Capitals</h2>
-
-                <a href="<c:url value='/delhi/add'/>"
-                   class="btn btn-info fw-bold">
-                    Add New Player
-                </a>
-            </div>
+        <c:when test="${not empty player}">
 
             <div class="card shadow-sm">
                 <div class="card-body p-0">
@@ -86,9 +82,14 @@
                 </div>
             </div>
 
-            <div class="text-center mt-4">
-                <a href="<c:url value='/home'/>"
+            <div class="text-center mt-4 d-flex justify-content-center gap-3">
+                <a href="<c:url value='/delhi/add'/>"
                    class="btn btn-info fw-bold">
+                    Add New Player
+                </a>
+
+                <a href="<c:url value='/home'/>"
+                   class="btn btn-secondary fw-bold">
                     Home
                 </a>
             </div>
@@ -98,17 +99,19 @@
         <c:otherwise>
 
             <div class="text-center mt-5">
-                <h3 class="fw-bold mb-4">No players found</h3>
+                <h4 class="fw-bold mb-4">No players found</h4>
 
-                <a href="<c:url value='/delhi/add'/>"
-                   class="btn btn-info fw-bold me-2">
-                    Add New Player
-                </a>
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="<c:url value='/delhi/add'/>"
+                       class="btn btn-info fw-bold">
+                        Add New Player
+                    </a>
 
-                <a href="<c:url value='/home'/>"
-                   class="btn btn-info fw-bold">
-                    Home
-                </a>
+                    <a href="<c:url value='/home'/>"
+                       class="btn btn-secondary fw-bold">
+                        Home
+                    </a>
+                </div>
             </div>
 
         </c:otherwise>
