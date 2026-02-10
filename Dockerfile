@@ -1,4 +1,5 @@
-FROM eclipse-temurin:17-jdk-jammy
-WORKDIR /app
-COPY target/ipl.jar app.jar
-ENTRYPOINT ["java","-jar","app.jar"]
+FROM tomcat:11.0-jdk17
+RUN rm -rf /usr/local/tomcat/webapps/*
+COPY target/ipl.war /usr/local/tomcat/webapps/ROOT.war
+EXPOSE 8080
+CMD ["catalina.sh", "run"]
