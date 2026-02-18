@@ -2,11 +2,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.ipl</groupId>
-  <artifactId>ipl</artifactId>
+  <artifactId>ipl-squadhub</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>ipl Maven Webapp</name>
-  <url>http://www.example.com</url>
+  <name>ipl-squadhub Maven Webapp</name>
+  <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -46,6 +46,6 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>ipl</finalName>
+    <finalName>ipl-squadhub</finalName>
       </build>
 </project>

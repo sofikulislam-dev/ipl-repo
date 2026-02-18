@@ -5,7 +5,7 @@
          version="6.0">
 
 <servlet>
-  <servlet-name>ipl</servlet-name>
+  <servlet-name>ipl-squadhub</servlet-name>
   <servlet-class>
     org.springframework.web.servlet.DispatcherServlet
   </servlet-class>
@@ -19,7 +19,7 @@
 </servlet>
 
 <servlet-mapping>
-  <servlet-name>ipl</servlet-name>
+  <servlet-name>ipl-squadhub</servlet-name>
   <url-pattern>/</url-pattern>
 </servlet-mapping>
 
